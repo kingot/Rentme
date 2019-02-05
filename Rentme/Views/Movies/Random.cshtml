@@ -1,0 +1,33 @@
+﻿@model Rentme.ViewModels.RandomMoviesViewModel;
+@{
+    ViewData["Title"] = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>The Movie Title is @Model.Movies.Name and the number attended is @Model.Movies.Id</h2>
+
+@* to display the list of customers, we need to write for 
+    each loop here, this is compulsory even if is one list
+  *@
+
+@* say we want to check if no customer has rented this movie before*@
+
+@if (Model.Customers.Count == 0)
+{
+    <p>No one has rented this movie </p>
+
+}
+else
+{
+    <ul>
+        @foreach (var customer in Model.Customers)
+        {
+            <li>@customer.Name</li>
+
+        }
+    </ul>
+
+}
+
+
+

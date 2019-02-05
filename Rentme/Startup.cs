@@ -59,10 +59,14 @@ namespace Rentme
 
             app.UseMvc(routes =>
             {
+                //using a custom route
+                //for example Movies/ReleasedDate/Year/Month
+                
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-        }
+        } 
     }
 }
